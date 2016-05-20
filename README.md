@@ -23,4 +23,4 @@ An android app reveals today's road constructions info in Taipei and you can avo
 - Detect Location via `LocationServices`
 
 ## Preview
-[preview]: preview.png
+![preview](https://raw.githubusercontent.com/meisheep/MaiDonRoad/master/preview.png)
