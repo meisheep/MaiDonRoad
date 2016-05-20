@@ -3,4 +3,6 @@
     <string name="toolbar_title">台北市今日道路施工</string>
     <string name="action_details">詳細資訊</string>
     <string name="action_badge">施工數</string>
+    <string name="prompt_fetching">連線取得資料中...</string>
+    <string name="prompt_map_connect_fail">無法取得地圖</string>
 </resources>

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
@@ -147,6 +148,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private class FetchTask extends AsyncTask<Void, Void, String> {
+        Snackbar snackbar;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            if(snackbar == null) {
+                snackbar = Snackbar
+                        .make(getWindow().getDecorView().findViewById(R.id.content_main), R.string.prompt_fetching, Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+
+        }
+
         @Override
         protected String doInBackground(Void... params) {
             String rawJson = "{}";
@@ -191,6 +205,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             MarkerOptions markerOpt = new MarkerOptions();
             for(Location l : locations) {
                 mMap.addMarker(new MarkerOptions().position(new LatLng(l.getLat(), l.getLng())));
+            }
+
+            if(snackbar != null) {
+                snackbar.dismiss();
             }
         }
     }
