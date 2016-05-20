@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.github.meisheep.maidonroad.MainActivity">
+
+    <item
+        android:id="@+id/action_badge"
+        android:orderInCategory="100"
+        android:title="@string/action_badge"
+        android:actionLayout="@layout/badge_main"
+        android:icon="@drawable/shape_badge"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_details"
+        android:orderInCategory="200"
+        android:title="@string/action_details"
+        app:showAsAction="never" />
+</menu>
